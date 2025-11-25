@@ -1,0 +1,258 @@
+form {
+  margin-top: 3rem;
+}
+
+fieldset {
+  border: none;
+  display: grid;
+  gap: 1.5rem;
+}
+
+fieldset + fieldset {
+  margin-top: 3rem;
+}
+
+legend {
+  font: 600 1rem /1.25 var(--font-family);
+  margin-bottom: 1.5rem;
+}
+
+input,
+textarea,
+select {
+  appearance: none;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--stroke-default);
+  padding: 0.75rem 1rem;
+  font: var(--text);
+  position: relative;
+}
+
+label {
+  font: var(--text-sm);
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+input:focus,
+select:focus,
+input[type="date"]:focus-within,
+textarea:focus {
+  outline: 0.25rem solid var(--surface-secondary);
+  border-color: var(--stroke-highlight);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  background-image: url(../assets/icons/calendar.svg);
+  background-position: center;
+  background-size: contain;
+  right: 1rem;
+}
+
+select {
+  background-image: url(../assets/icons/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem);
+}
+
+.dropzone {
+  border: 1px dashed var(--stroke-default);
+  border-radius: 0.25rem;
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 1.75rem 1rem;
+  position: relative;
+}
+
+.dropzone input {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dropzone p {
+  color: var(--text-tertiary);
+}
+
+.dropzone:hover,
+.dropzone:has(input:focus) {
+  border-width: 2px;
+  border-color: var(--stroke-highlight);
+  background-color: var(--surface-secondary);
+}
+
+.dropzone:hover svg path {
+  stroke: var(--stroke-highlight);
+}
+
+.address-info .flex {
+  gap: 1.25rem;
+}
+
+.input-wrapper:has([disabled]) {
+  opacity: 0.5;
+}
+
+input:disabled {
+  background-color: var(--surface-disabled);
+  border: 1px solid var(--stroke-default);
+  color: var(--text-primary);
+}
+
+input:not(:focus):valid + .error {
+  display: none;
+}
+
+input:invalid {
+  border-color: var(--semantic-error);
+}
+
+.input-wrapper small {
+  font: var(--text-sm);
+  color: var(--text-tertiary);
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+
+.input-wrapper .error {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font: var(--text-sm);
+  color: var(--semantic-error);
+  margin-top: 0.25rem;
+}
+
+label + .radio-wrapper {
+  margin-top: 1rem;
+}
+
+.radio-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  gap: 1rem;
+}
+
+.radio-inner {
+  border: 1px solid var(--stroke-default);
+  border-radius: 0.5rem;
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  padding: 2rem 0.5rem 0.5rem;
+  position: relative;
+}
+
+button,
+.radio-inner input,
+.radio-inner input:focus,
+.radio-inner input:hover,
+.checkbox-wrapper input {
+  all: unset;
+}
+
+.radio-inner input,
+.radio-inner input:focus,
+.radio-inner input:hover,
+.checkbox-wrapper input {
+  position: absolute;
+  inset: 0;
+}
+
+.radio-image {
+  background-image: url(../assets/icons/radio-default.svg);
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+.radio-inner:hover,
+.radio-inner:focus-within,
+.radio-inner:has(:checked) {
+  border-color: var(--stroke-highlight);
+}
+
+.radio-inner:hover .radio-image,
+.radio-inner:focus-within .radio-image {
+  background-image: url(../assets/icons/radio-hover.svg);
+}
+
+.radio-inner:has(:checked) .radio-image {
+  background-image: url(../assets/icons/radio-checked.svg);
+}
+
+.terms-wrapper {
+  margin-top: 3rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.terms-wrapper strong {
+  font-weight: 500;
+  color: var(--text-highlight);
+}
+
+.checkbox-wrapper {
+  position: relative;
+}
+
+.checkbox-image {
+  background-image: url(../assets/icons/checkbox-default.svg);
+  background-repeat: no-repeat;
+  flex: 0 0 1.5rem;
+  height: 1.5rem;
+}
+
+.checkbox-wrapper:hover .checkbox-image,
+.checkbox-wrapper:focus-within .checkbox-image {
+  background-image: url(../assets/icons/checkbox-hover.svg);
+}
+
+.checkbox-wrapper:has(:checked) .checkbox-image {
+  background-image: url(../assets/icons/checkbox-checked.svg);
+}
+
+.actions-wrapper {
+  font-weight: 500;
+  margin-top: 3rem;
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  color: var(--text-highlight);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: var(--surface-primary);
+  background-color: var(--brand-dark);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--brand-mid);
+}
+
+.btn-secondary {
+  margin-left: auto;
+  border: 1px solid var(--text-highlight);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: var(--brand-dark);
+  outline: .25rem solid var(--surface-secondary);
+}
