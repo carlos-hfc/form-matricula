@@ -1,13 +1,10 @@
 #app {
   display: grid;
-  grid-template-columns: 51.25% 48.75%;
-  height: 100dvh;
-  overflow: hidden;
 }
 
 main,
 aside {
-  padding: 4rem;
+  padding: 1.5rem;
 }
 
 main {
@@ -33,14 +30,16 @@ main h1 {
 
 aside {
   background-color: var(--surface-secondary);
+  order: -1;
 }
 
-aside .aside-container {
-  max-width: 31rem;
+aside header {
+  text-align: center;
 }
 
-aside .aside-container > img {
-  margin-top: 2rem;
+aside h2,
+aside p {
+  display: none;
 }
 
 aside h2 {
@@ -50,4 +49,38 @@ aside h2 {
 
 aside h2 span {
   color: var(--text-highlight);
+}
+
+@media (min-width: 992px) {
+  #app {
+    height: 100dvh;
+    overflow: hidden;
+    grid-template-columns: 51.25% 48.75%;
+  }
+
+  main,
+  aside {
+    padding: 4rem;
+  }
+
+  aside {
+    order: 0;
+  }
+
+  aside header {
+    text-align: initial;
+  }
+
+  aside h2,
+  aside p {
+    display: block;
+  }
+
+  aside .aside-container {
+    max-width: 31rem;
+  }
+
+  aside .aside-container > img {
+    margin-top: 2rem;
+  }
 }
